@@ -4,6 +4,7 @@ import Button from '@mui/material/Button'
 import left from '../images/left.png'
 import {Outlet, Link} from 'react-router-dom'
 
+
 function Signup() {
   const mystyle = {
     color: "white",

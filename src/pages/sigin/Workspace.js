@@ -1,10 +1,10 @@
 import React from 'react'
 import Avatar from '@mui/material/Avatar';
-import learnjs from '../images/learnjs.jpg'
-import frontendbrazil from '../images/frontendbrazil.jpg'
-import frontendlondon from '../images/frontedlondon.png'
-import product from '../images/product.jpg'
-import remote from '../images/remote.png'
+import learnjs from '../../images/learnjs.jpg'
+import frontendbrazil from '../../images/frontendbrazil.jpg'
+import frontendlondon from '../../images/frontedlondon.png'
+import product from '../../images/product.jpg'
+import remote from '../../images/remote.png'
 import Button from '@mui/material/Button'
 
 export default function Workspace({btn}) {

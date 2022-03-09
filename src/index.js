@@ -4,10 +4,9 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Download from './pages/Download'
 import Signup from './pages/Signup'
-import Signin from './pages/Signin'
-import FindWorkspace from './pages/FindWorkspace'
-import Truesignup from './pages/Truesignup';
-import Verification from './pages/Verification'
+import Signin from './pages/sigin/Signin'
+import FindWorkspace from './pages/sigin/FindWorkspace'
+import Truesignup from './pages/sigin/Truesignup';
 
 
 
@@ -20,7 +19,6 @@ export default function App() {
           <Route path="Signup/Signin" element={<Signin />} />
           <Route path="Signup/Signin/FindWorkspace" element={<FindWorkspace />} />
           <Route path="Signup/Signin/Truesignup" element={<Truesignup />} />
-          <Route path="Signup/Signin/Truesignup/Verification" element={<Verification />} />
       </Routes>
     </BrowserRouter>
   );

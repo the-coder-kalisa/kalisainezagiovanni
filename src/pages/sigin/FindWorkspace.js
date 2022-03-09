@@ -1,5 +1,5 @@
 import React from 'react'
-import SlackLogo from '../images/SlackLogo'
+import SlackLogo from '../../images/SlackLogo'
 import Workspace from './Workspace'
 import Button from '@mui/material/Button'
 export default function FindWorkspace() {
