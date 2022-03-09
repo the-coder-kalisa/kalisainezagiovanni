@@ -20,7 +20,7 @@ export default function Verification() {
       <div className="py-8 m-auto"><SlackLogo width="150"/></div>
 <div className={`flex flex-col items-center`}>
           <div className="text-5xl font-bold">Check your email for a code</div>
-          <div className="text-center py-5 text-xl text-gray-700">We've sent a 6&minus;digit code to <span className='font-[650]'>hello</span>. The coder expires shortly,<br />so please enter it soon.</div>
+          <div className="text-center py-5 text-xl text-gray-700">We've sent a 6&minus;digit code to <span className='font-[650]'>hello again</span>. The coder expires shortly,<br />so please enter it soon.</div>
           <form onSubmit={handelSubmit} method="post" action="#">
             <input autocomplete="off" name="firstNumber" value={inputs.first} onChange={handleChange} type={"text"} maxLength="1" className="outline-none text-3xl text-center rounded-l-md border-y-2 border-l-2 border-solid w-20 h-20 border-gray-400"/>
             <input autocomplete="off" name="second" type={"text"} value={inputs.second} onChange={handleChange} maxLength="1" className="outline-none text-3xl text-center border-y-2 border-l-2 border-solid w-20 h-20 border-gray-400"/>
