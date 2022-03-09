@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, { useState} from 'react'
 // import Context from './store.js'
 import Bottomer from './Bottomer'
 import SlackLogo from '../images/SlackLogo'
