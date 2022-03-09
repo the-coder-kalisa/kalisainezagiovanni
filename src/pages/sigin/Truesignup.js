@@ -12,7 +12,8 @@ export default function Truesignup() {
   const [displaylast, setDisplayLast] = useState("hidden")
   const [error, setError] = useState("hidden")
   const [errorg, setErrorg] = useState("hidden")
-    
+  const [myborder, setMyborder] = useState("gray-300")
+  const [ring, setRing] = useState("blue")
   const handlechange = (e) =>{
     e.preventDefault();
     setValue(e.target.value)
@@ -21,10 +22,14 @@ export default function Truesignup() {
     if(value==""){
       setError("block")
       setErrorg("hidden")
+      setMyborder("#e64a7a")
+      setRing("#f5b5c8")
     }
     else if(!value.includes("@gmail.com")){
       setErrorg("block")
       setError("hidden")
+      setMyborder("#e64a7a")
+      setRing("#f5b5c8")
     }
     else{
         setDisplayFirst("hidden")
@@ -41,15 +46,15 @@ export default function Truesignup() {
       console.log(inputs);
     }
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col  items-center">
         <div className="py-8"><SlackLogo width="150"/></div>
         <div className={`${displayfirst} flex-col items-center`}>
         <div className="text-5xl font-bold">First, enter your email</div>
         <div className="text-xl my-5"><span>We suggest using the </span><span className="font-semibold text-gray-700">email address you use at work.</span></div>
         <form action="#" className="flex flex-col" onSubmit={handlethings}>
-            <input autocomplete="off" type="text" value={value} onChange={handlechange} className="border-2 my-3 placeholder:text-gray-700 w-[400px] indent-2 outline-none focus:ring ring-blue-2 rounded-md p-2 border-solid border-gray-300" placeholder="name@work-email.com"/>
-            <div className={`${error}`}><Alert severity="warning" className={`w-[25rem]  h-11`}>Please enter your email</Alert></div>
-            <div className={`${errorg}`}><Alert severity="warning" className={`w-[25rem]  h-11`}>It seems like email entered is invalid</Alert></div>
+            <input autocomplete="off" type="text" value={value} onChange={handlechange} className={`border-2 my-3 placeholder:text-gray-700 w-[400px] indent-2 outline-none focus:ring ring-[${ring}] ring-4 rounded-md p-2 border-solid border-[${myborder}]`} placeholder="name@work-email.com"/>
+            <div className={`${error}`}><Alert severity="error" className={`w-[407px] -ml-1 -mt-2 h-13 border-2 border-solid border-[#f5b5c8]`}>This is required — you'll need to enter an email.</Alert></div>
+            <div className={`${errorg}`}><Alert severity="error" className={`w-[407px] -ml-1 -mt-2 h-13`}>It looks like that isn't a valid email address.</Alert></div>
             <Button type="submit" variant="contained" style={{backgroundColor: '#4a154b', color: 'white',marginTop: '10px', width: '400px', padding: '10px'}}>continue</Button>
             <div className="w-[25rem] py-5">
               <label className="cursor-pointer"><input type="checkbox"/><span>It's okay to send me emails about Slack</span></label></div>
