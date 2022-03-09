@@ -19,7 +19,7 @@ export default function Truesignup() {
     setValue(e.target.value)
   }
   const handlethings = ()=>{
-    if(value==""){
+    if(value===""){
       setError("block")
       setErrorg("hidden")
       setMyborder("#e64a7a")
