@@ -2,21 +2,33 @@ import React, {useState} from 'react'
 import SlackLogo from '../../images/SlackLogo'
 import Button from '@mui/material/Button'
 import Bottomer from './Bottomer'
+import { Alert } from '@mui/material'
+// import {useForm} from 'react-hook-form'
 
 
 export default function Truesignup() {
   const [value, setValue] = useState("")
   const [displayfirst, setDisplayFirst] = useState("flex")
   const [displaylast, setDisplayLast] = useState("hidden")
-  
+  const [error, setError] = useState("hidden")
+  const [errorg, setErrorg] = useState("hidden")
     
   const handlechange = (e) =>{
     e.preventDefault();
     setValue(e.target.value)
   }
   const handlethings = ()=>{
-    setDisplayFirst("hidden");
-    setDisplayLast("flex");
+    if(value==""){
+      setError("block")
+      setErrorg("hidden")
+    }
+    else if(!value.includes("@gmail.com")){
+      setErrorg("block")
+      setError("hidden")
+    }
+    else{
+        setDisplayFirst("hidden")
+        setDisplayLast("flex")}
   }
   const [inputs, setInputs] = useState({});
   const handleChange = (e)=>{
@@ -36,6 +48,8 @@ export default function Truesignup() {
         <div className="text-xl my-5"><span>We suggest using the </span><span className="font-semibold text-gray-700">email address you use at work.</span></div>
         <form action="#" className="flex flex-col" onSubmit={handlethings}>
             <input autocomplete="off" type="text" value={value} onChange={handlechange} className="border-2 my-3 placeholder:text-gray-700 w-[400px] indent-2 outline-none focus:ring ring-blue-2 rounded-md p-2 border-solid border-gray-300" placeholder="name@work-email.com"/>
+            <div className={`${error}`}><Alert severity="warning" className={`w-[25rem]  h-11`}>Please enter your email</Alert></div>
+            <div className={`${errorg}`}><Alert severity="warning" className={`w-[25rem]  h-11`}>It seems like email entered is invalid</Alert></div>
             <Button type="submit" variant="contained" style={{backgroundColor: '#4a154b', color: 'white',marginTop: '10px', width: '400px', padding: '10px'}}>continue</Button>
             <div className="w-[25rem] py-5">
               <label className="cursor-pointer"><input type="checkbox"/><span>It's okay to send me emails about Slack</span></label></div>
@@ -59,7 +73,7 @@ export default function Truesignup() {
           <Bottomer />
           </div>
       </div>
-        </div>
+  </div>
     )
   }
   
